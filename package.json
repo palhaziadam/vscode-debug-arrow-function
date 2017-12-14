@@ -1,0 +1,53 @@
+{
+    "name": "vscode-debug-arrow-function",
+    "displayName": "Debug arrow function",
+    "description": "Help debug arrow functions",
+    "version": "0.0.1",
+    "publisher": "adampalhazi",
+    "repository": "https://github.com/palhaziadam/vscode-debug-arrow-function.git",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.removeArrow",
+        "onCommand:extension.createArrow"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [{
+            "command": "extension.removeArrow",
+            "title": "Remove arrow function"
+        }, {
+            "command": "extension.createArrow",
+            "title": "Create arrow function"
+        }],
+        "keybindings": [
+            {
+                "command": "extension.removeArrow",
+                "key": "shift+ctrl+a",
+                "mac": "shift+cmd+a",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "extension.createArrow",
+                "key": "shift+ctrl+i",
+                "mac": "shift+cmd+i",
+                "when": "editorTextFocus"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "eslint": "^4.6.1",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
